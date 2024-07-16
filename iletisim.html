@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Forum Sitesi</title>
+    <!---GİRİŞ YAP KAYIT OL , SORU SOR KISMI , TEKNOLOJİ HABERLERİ FARKLI FARKLI Bİ SAYFADA NAVBARA Bİ EL ATILMALI , KURALLAR SAYFASI ,   -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <style>
+      main {
+        padding: 20px;
+      }
+
+      .contact-section {
+        max-width: 600px;
+        margin: 0 auto;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .contact-section h2 {
+        margin-top: 0;
+      }
+
+      .contact-section form {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .contact-section form label {
+        margin-top: 10px;
+      }
+
+      .contact-section form input,
+      .contact-section form textarea {
+        padding: 10px;
+        margin-top: 5px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 16px;
+      }
+
+      .contact-section form button {
+        margin-top: 20px;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        background-color: #333;
+        color: #fff;
+        font-size: 16px;
+        cursor: pointer;
+      }
+
+      .contact-section form button:hover {
+        background-color: #555;
+      }
+    </style>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a
+          href="./index.html"
+          style="
+            color: rgb(0, 91, 196);
+            text-decoration: none;
+            margin-left: 10px;
+          "
+        >
+          <h3>TİMES OF FEATURES</h3>
+        </a>
+        <ul style="margin-right: 10px">
+          <li><a href="./forum.html">Forum</a></li>
+          <li><a href="./iletisim.html">İletişim</a></li>
+          <li><a href="./hakkimizda.html">Hakkımızda</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <div
+        class="links"
+        style="width: 100%; display: flex; justify-content: center"
+      >
+        <a href="https://www.instagram.com/l.celill26/">
+          <i style="font-size: 30px" class="fa-brands fa-instagram fa"></i>
+        </a>
+        <i style="font-size: 30px" class="fa-brands fa-x-twitter fa"></i>
+        <a href="tel:+905457282757">
+          <i style="font-size: 30px" class="fa-brands fa-whatsapp fa"></i>
+        </a>
+        <a href="mailto:omerceliletgin1@gmail.com">
+          <i style="font-size: 30px" class="fa-regular fa-envelope fa"></i>
+        </a>
+      </div>
+      <br />
+      <section class="contact-section">
+        <h2>İletişim</h2>
+        <p>Bizimle iletişime geçmek için aşağıdaki formu doldurun.</p>
+        <form action="#" method="post">
+          <label for="name">İsim:</label>
+          <input type="text" id="name" name="name" required />
+
+          <label for="email">E-posta:</label>
+          <input type="email" id="email" name="email" required />
+
+          <label for="subject">Konu:</label>
+          <input type="text" id="subject" name="subject" required />
+
+          <label for="message">Mesaj:</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+
+          <button type="submit">Gönder</button>
+        </form>
+      </section>
+    </main>
+
+    <div class="footbar" style="margin-top: 40px" id="footbar">
+      <div>
+        <h4>Sosyal Ağlar</h4>
+        <div class="links">
+          <a href="https://www.instagram.com/l.celill26/">
+            <i class="fa-brands fa-instagram fa"></i>
+          </a>
+          <i class="fa-brands fa-x-twitter fa"></i>
+          <a href="tel:+905457282757">
+            <i class="fa-brands fa-whatsapp fa"></i>
+          </a>
+          <a href="mailto:omerceliletgin1@gmail.com">
+            <i class="fa-regular fa-envelope fa"></i>
+          </a>
+        </div>
+      </div>
+      <div>
+        <pre
+          style="
+            font-family: system-ui, -apple-system, BlinkMacSystemFont,
+              'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans',
+              'Helvetica Neue', sans-serif;
+            font-size: 14px;
+          "
+        >
+          Bu forum, 10 haziran 2024 tarihinden itibaren yayın hayatına
+          başlamış, Türkçe yayın yapan bilişim web sitesidir. Bilişim
+          teknolojileri alanındaki güncel gelişmeleri kullanıcılarına
+          sunmaktadır.
+        </pre>
+      </div>
+    </div>
+  </body>
+</html>

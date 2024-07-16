@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Forum Sitesi</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="all-div">
+      <header>
+        <nav>
+          <a
+            href="./index.html"
+            style="
+              color: rgb(0, 91, 196);
+              text-decoration: none;
+              margin-left: 10px;
+            "
+          >
+            <h3>TİMES OF FEATURES</h3>
+          </a>
+          <ul style="margin-right: 10px">
+            <li><a href="./forum.html">Forum</a></li>
+            <li><a href="./iletisim.html">İletişim</a></li>
+            <li><a href="./hakkimizda.html">Hakkımızda</a></li>
+          </ul>
+        </nav>
+      </header>
+      <div class="main" style="margin-bottom: 200px">
+        <div class="card-s">
+          <input
+            type="text"
+            style="border-radius: 12px; padding: 4px; font-size: 17px"
+            placeholder="Kullanıcı Adı"
+            id="isim"
+          />
+
+          <textarea
+            placeholder="Yorum"
+            style="border-radius: 12px; padding: 4px; font-size: 17px"
+            id="aciklama"
+          ></textarea>
+          <button
+            onclick="soruEkle()"
+            style="border-radius: 12px; padding: 10px 4px; font-size: 17px"
+            class="btnEkle"
+          >
+            Yorum Yap
+          </button>
+        </div>
+        <div class="card">
+          <div class="cards-top">
+            <img src="./blank-profile-picture.png" alt="pp" />
+            <h4 class="isim"></h4>
+          </div>
+          <p class="icerik"></p>
+        </div>
+      </div>
+
+      <div class="footbar" id="footbar">
+        <div>
+          <h4>Sosyal Ağlar</h4>
+          <div class="links">
+            <a href="https://www.instagram.com/l.celill26/">
+              <i class="fa-brands fa-instagram fa"></i>
+            </a>
+            <i class="fa-brands fa-x-twitter fa"></i>
+            <a href="tel:+905457282757">
+              <i class="fa-brands fa-whatsapp fa"></i>
+            </a>
+            <a href="mailto:omerceliletgin1@gmail.com">
+              <i class="fa-regular fa-envelope fa"></i>
+            </a>
+          </div>
+        </div>
+        <div>
+          <pre
+            style="
+              font-family: system-ui, -apple-system, BlinkMacSystemFont,
+                'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans',
+                'Helvetica Neue', sans-serif;
+              font-size: 14px;
+            "
+          >
+            Bu forum, 10 haziran 2024 tarihinden itibaren yayın hayatına
+            başlamış, Türkçe yayın yapan bilişim web sitesidir. Bilişim
+            teknolojileri alanındaki güncel gelişmeleri kullanıcılarına
+            sunmaktadır.
+          </pre>
+        </div>
+      </div>
+    </div>
+    <script>
+      var isimTxt = document.getElementById("isim");
+      var aciklamaTxt = document.getElementById("aciklama");
+      const soruEkle = () => {
+        /*
+        <div class="card">
+        <div class="cards-top">
+          <img src="./blank-profile-picture.png" alt="pp" />
+          <h4>Celil</h4>
+        </div>
+        <p>HP Victus Serisi Tutulur mu?</p>
+      </div>*/
+        var card = document.createElement("div");
+        var cardsTop = document.createElement("div");
+        var img = document.createElement("img");
+        var h4 = document.createElement("h4");
+        var p = document.createElement("p");
+        card.classList.add("card");
+        cardsTop.classList.add("cards-top");
+        img.src = "./blank-profile-picture.png";
+        h4.innerHTML = isimTxt.value;
+        p.innerHTML = aciklamaTxt.value;
+        var main = document.querySelector(".main");
+
+        cardsTop.appendChild(img);
+        cardsTop.appendChild(h4);
+
+        card.appendChild(cardsTop);
+        card.appendChild(p);
+        main.appendChild(card);
+      };
+
+      // script.js
+      // URL parametrelerini yakalayan fonksiyon
+      function getQueryParams() {
+        let params = {};
+        let queryString = window.location.search.substring(1);
+        let queries = queryString.split("&");
+        for (let i = 0; i < queries.length; i++) {
+          let pair = queries[i].split("=");
+          params[decodeURIComponent(pair[0])] = decodeURIComponent(pair[1]);
+        }
+        return params;
+      }
+
+      // Sayfa yüklendiğinde URL parametrelerini yakala ve paragrafa yazdır
+      window.onload = function () {
+        let params = getQueryParams();
+
+        // Yakalanan parametreleri kontrol et ve paragrafa yazdır
+        if (Object.keys(params).length > 0) {
+          var isim = document.querySelector(".isim");
+          isim.innerHTML = params.isim;
+          var icerik = document.querySelector(".icerik");
+          icerik.innerHTML = params.icerik;
+        } else {
+          output.textContent = "Herhangi bir URL parametresi bulunamadı.";
+        }
+      };
+    </script>
+  </body>
+</html>

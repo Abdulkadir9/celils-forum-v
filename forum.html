@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Forum Sitesi</title>
+    <!---GİRİŞ YAP KAYIT OL , SORU SOR KISMI , TEKNOLOJİ HABERLERİ FARKLI FARKLI Bİ SAYFADA NAVBARA Bİ EL ATILMALI , KURALLAR SAYFASI ,   -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a
+          href="./index.html"
+          style="
+            color: rgb(0, 91, 196);
+            text-decoration: none;
+            margin-left: 10px;
+          "
+        >
+          <h3>TİMES OF FEATURES</h3>
+        </a>
+        <ul style="margin-right: 10px">
+          <li><a href="./forum.html">Forum</a></li>
+          <li><a href="./iletisim.html">İletişim</a></li>
+          <li><a href="./hakkimizda.html">Hakkımızda</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="main">
+      <h2>Soru Sor</h2>
+      <div
+        style="
+          width: 100%;
+          height: 1px;
+          background-color: #7a7a7a;
+          margin-bottom: 20px;
+        "
+      ></div>
+      <div class="card-s">
+        <input
+          type="text"
+          placeholder="Kullanıcı Adı"
+          style="
+            border-radius: 8px;
+            border: 0px;
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+            font-size: 17px;
+            padding: 5px;
+          "
+          id="isim"
+        />
+
+        <textarea
+          placeholder="Soru"
+          style="
+            border-radius: 8px;
+            border: 0px;
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+            font-size: 17px;
+            padding: 5px;
+          "
+          id="aciklama"
+        ></textarea>
+        <button
+          onclick="soruEkle()"
+          style="
+            border-radius: 14px;
+            border: 0px;
+            outline: none;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            font-size: 17px;
+            cursor: pointer;
+            padding: 10px;
+          "
+          class="btnEkle"
+        >
+          Ekle
+        </button>
+      </div>
+      <div class="cards-title">
+        <i class="fa-solid fa-fire"></i>
+        <h3>Forumda Bugün</h3>
+      </div>
+
+      <div class="card">
+        <div class="cards-top">
+          <img src="./blank-profile-picture.png" alt="pp" />
+          <h4>Celil</h4>
+        </div>
+        <p>HP Victus Serisi Tutulur mu?</p>
+      </div>
+      <div class="card">
+        <div class="cards-top">
+          <img src="./blank-profile-picture.png" alt="pp" />
+          <h4>Kadir</h4>
+        </div>
+        <p>ChatGPT4o ile İlgili ne düşünüyorsunuz?</p>
+      </div>
+      <div class="card">
+        <div class="cards-top">
+          <img src="./blank-profile-picture.png" alt="pp" />
+          <h4>Semih</h4>
+        </div>
+        <p>R5 3600 90 derece normal mi?</p>
+      </div>
+    </div>
+
+    <div class="footbar" id="footbar">
+      <div>
+        <h4>Sosyal Ağlar</h4>
+        <div class="links">
+          <a href="https://www.instagram.com/l.celill26/">
+            <i class="fa-brands fa-instagram fa"></i>
+          </a>
+          <i class="fa-brands fa-x-twitter fa"></i>
+          <a href="tel:+905457282757">
+            <i class="fa-brands fa-whatsapp fa"></i>
+          </a>
+          <a href="mailto:omerceliletgin1@gmail.com">
+            <i class="fa-regular fa-envelope fa"></i>
+          </a>
+        </div>
+      </div>
+      <div>
+        <pre
+          style="
+            font-family: system-ui, -apple-system, BlinkMacSystemFont,
+              'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans',
+              'Helvetica Neue', sans-serif;
+            font-size: 14px;
+          "
+        >
+          Bu forum, 10 haziran 2024 tarihinden itibaren yayın hayatına
+          başlamış, Türkçe yayın yapan bilişim web sitesidir. Bilişim
+          teknolojileri alanındaki güncel gelişmeleri kullanıcılarına
+          sunmaktadır.
+        </pre>
+      </div>
+    </div>
+
+    <script>
+      var isimTxt = document.getElementById("isim");
+      var aciklamaTxt = document.getElementById("aciklama");
+      const soruEkle = () => {
+        var card = document.createElement("div");
+        var cardsTop = document.createElement("div");
+        var img = document.createElement("img");
+        var h4 = document.createElement("h4");
+        var p = document.createElement("p");
+        card.classList.add("card");
+        cardsTop.classList.add("cards-top");
+        img.src = "./blank-profile-picture.png";
+        h4.innerHTML = isimTxt.value;
+        p.innerHTML = aciklamaTxt.value;
+        var main = document.querySelector(".main");
+
+        cardsTop.appendChild(img);
+        cardsTop.appendChild(h4);
+
+        card.appendChild(cardsTop);
+        card.appendChild(p);
+        main.appendChild(card);
+      };
+
+      var soru = document.querySelectorAll(".card");
+      setInterval(() => {
+        soru = document.querySelectorAll(".card");
+
+        soru.forEach((x) => {
+          x.addEventListener("click", () => {
+            var isim = x.children[0].children[1].innerHTML;
+            var icerik = x.children[1].innerHTML;
+            window.location.href = `detay.html?&isim=${encodeURIComponent(
+              isim
+            )}&icerik=${encodeURIComponent(icerik)}`;
+          });
+        });
+      }, 500);
+    </script>
+  </body>
+</html>
